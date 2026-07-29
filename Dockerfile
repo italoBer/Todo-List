@@ -7,7 +7,7 @@ COPY . .
 
 RUN apt-get install maven -y
 RUN mvn clean install
-FROM openjdk:17-slim
+FROM eclipse-temurin:17-jre
 EXPOSE 8080
 COPY --from=build /target/todolist-1.0.0-SNAPSHOT.jar app.jar
 
